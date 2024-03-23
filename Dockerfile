@@ -9,5 +9,15 @@ RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY ./requirements.txt /tmp/requirements.txt
-RUN pip install -Ur /tmp/requirements.txt && rm -rf /tmp
+
+RUN apk add --update --no-cache postgresql-client
+
+
+RUN apk add --update --no-cache --virtual .tmp-build-deps \
+    build-base postgresql-dev musl-dev
+
+RUN pip install -Ur /tmp/requirements.txt && \
+    rm -rf /tmp && \
+    apk del .tmp-build-deps
+
 
