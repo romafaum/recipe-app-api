@@ -1,0 +1,17 @@
+.git
+.gitigrone
+
+docker-compose.yml
+.docker
+.dockerignore
+
+**/__pycache__/
+**/*.py[cod]
+
+*.log
+
+.env
+.venv/
+venv/
+
+.vscode/
