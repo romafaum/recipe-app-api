@@ -17,4 +17,4 @@ class Command(BaseCommand):
             except (PsycopgOpError, OperationalError):
                 self.stdout.write('Database unvailable, wait for 1 second ...')
                 time.sleep(1)
-        self.stdout.write(self.style.SUCCESS('Successful connection to databases!'))
+        self.stdout.write(self.style.SUCCESS('Successful connection to databases!')) # noqa
