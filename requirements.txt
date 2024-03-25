@@ -1,4 +1,4 @@
 Django
 djangorestframework
 flake8
-psycopg
+psycopg[binary]
