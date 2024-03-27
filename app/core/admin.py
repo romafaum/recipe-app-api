@@ -21,10 +21,10 @@ class UserAdmin(BaseUserAdmin):
         ),
         (_('Important dates'), {"fields": ('last_login', )}),
     )
-    readonly_fields =['last_login']
-    add_fieldsets =(
+    readonly_fields = ['last_login']
+    add_fieldsets = (
         (None, {
-            'classes':('wide', ),
+            'classes': ('wide', ),
             'fields': (
                 'email',
                 'password1',
@@ -36,5 +36,6 @@ class UserAdmin(BaseUserAdmin):
             )
         }),
     )
+
 
 admin.site.register(models.User, UserAdmin)
