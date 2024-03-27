@@ -3,6 +3,7 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 from core import models
 
+
 class ModelTests(TestCase):
 
     def test_create_user_with_email_successful(self):
@@ -40,8 +41,8 @@ class ModelTests(TestCase):
             'test1@example.com',
             'Password123'
         )
-        recipe = models.Recipe.objects().create(
-            user=user,
+        recipe = models.Recipe.objects.create(
+            owner=user,
             title='Sample title',
             time_minutes=5,
             price=Decimal('5.50'),

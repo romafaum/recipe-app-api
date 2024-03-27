@@ -1,4 +1,4 @@
-from rest_framework import generics, authentication, permissions, viewsets
+from rest_framework import authentication, permissions, viewsets
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 from user.seriallizers import UserSerializer, AuthTokenSerializer
@@ -15,9 +15,10 @@ from user.seriallizers import UserSerializer, AuthTokenSerializer
 #         else:
 #             return True
 
+
 class UserView(viewsets.ModelViewSet):
     serializer_class = UserSerializer
-    authentication_classes =[authentication.TokenAuthentication]
+    authentication_classes = [authentication.TokenAuthentication]
 
     def get_permissions(self):
         if self.action == 'retrieve' or self.action == 'partial_update':
